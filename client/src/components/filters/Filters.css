@@ -1,0 +1,10 @@
+.filter-content .filter-head > .ant-card-head {
+  border-bottom: 1px solid #ccc;
+}
+
+.filter-content .ant-card-head,
+.filter-content .ant-card-body,
+.action-ctrls .ant-card-body,
+.action-ctrls .ant-card-head {
+  padding: 0;
+}
