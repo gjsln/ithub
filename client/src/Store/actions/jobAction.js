@@ -17,6 +17,18 @@ export const fetchJobs = () => (dispatch) => {
     });
 };
 
-export function updateJobs(updatepayload) {
-  return { type: UPDATE_JOBS, updatepayload };
-}
+export const fetchQueryJobs = (payload) => (dispatch) => {
+  let uri = `/api/jobdescriptions/search?${payload.key}=${payload.filterText}`;
+
+  return axios
+    .get(uri)
+    .then((res) =>
+      dispatch({
+        type: UPDATE_JOBS,
+        payload: res.data,
+      })
+    )
+    .catch((err) => {
+      console.log('Could not fetch jobs. Try again later.');
+    });
+};

@@ -6,6 +6,10 @@ import Availability from './controls/Availability';
 import Location from './controls/Location';
 
 class Filters extends Component {
+  onChange = (value) => {
+    this.props.handleFilter(value);
+  };
+
   render() {
     return (
       <>
@@ -39,7 +43,9 @@ class Filters extends Component {
                     extra={<a href='all.html'>Clear</a>}
                     className='action-ctrls bg-none'
                   >
-                    <Availability />
+                    <Availability
+                      handleJobTypeFilter={this.onChange.bind(this)}
+                    />
                   </Card>
                 </List.Item>
               )}
@@ -53,7 +59,7 @@ class Filters extends Component {
                     extra={<a href='all.html'>Clear</a>}
                     className='action-ctrls bg-none'
                   >
-                    <Location />
+                    <Location handleLocationFilter={this.onChange.bind(this)} />
                   </Card>
                 </List.Item>
               )}

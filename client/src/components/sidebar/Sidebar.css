@@ -3,6 +3,9 @@
 }
 .sidebar-content .ant-card-body {
   padding: 1rem;
+}
+
+.sidebar-content .signup-card {
   text-align: center;
 }
 

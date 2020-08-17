@@ -5,8 +5,12 @@ import 'antd/dist/antd.css';
 const { Option } = Select;
 
 class Location extends Component {
-  handleChange = (e) => {
-    console.log(`checked = ${e}`);
+  handleChange = (value) => {
+    const item = {
+      key: 'location',
+      filterText: value,
+    };
+    this.props.handleLocationFilter(item);
   };
   render() {
     return (
@@ -14,7 +18,7 @@ class Location extends Component {
         <Select
           style={{ width: 261 }}
           placeholder='Select a Location'
-          onChange={this.handleChange(this)}
+          onChange={this.handleChange.bind(this)}
         >
           <Option value='singapore'>Singapore</Option>
           <Option value='chennai'>Chennai</Option>

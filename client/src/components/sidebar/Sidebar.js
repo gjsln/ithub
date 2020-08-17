@@ -19,7 +19,7 @@ class Sidebar extends Component {
       <div className='sidebar-content'>
         <Row gutter={16}>
           <Col className='col-width'>
-            <Card bordered={false}>
+            <Card bordered={false} className='signup-card'>
               <Space direction='vertical' size={10}>
                 <img src={logo} alt='Logo' />
                 <h5>Track time on Hubstaff</h5>

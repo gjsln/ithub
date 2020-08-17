@@ -13,11 +13,10 @@ function jobReducer(state = initialState, action) {
         jobs: action.payload,
       };
     case UPDATE_JOBS:
-      const { updatepayload } = action;
-      return Object.assign({}, state, {
-        filteredJobs: updatepayload,
-      });
-
+      return {
+        ...state,
+        filterList: action.payload,
+      };
     default:
       return state;
   }

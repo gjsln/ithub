@@ -24,7 +24,8 @@
     margin-bottom: 0.5rem;
 }
 
-.tag-txt {
+.tag-txt,
+.pagination-content {
     padding: 0.5rem 0;
 }
 

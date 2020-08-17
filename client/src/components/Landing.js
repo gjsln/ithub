@@ -5,7 +5,7 @@ import { Col, Row } from 'antd';
 import Sidebar from './sidebar/Sidebar';
 import SearchBox from './search/SearchBox';
 import Filters from './filters/Filters';
-import { fetchJobs, updateJobs } from '../Store/actions/jobAction';
+import { fetchJobs, fetchQueryJobs } from '../Store/actions/jobAction';
 import SearchResult from '../pages/SearchResult';
 
 class Landing extends Component {
@@ -13,33 +13,36 @@ class Landing extends Component {
     this.props.fetchJobs();
   }
 
-  filterJobData = (SearchKey) => {
-    const { jobslist, updateJobData } = this.props;
-    const filterData = jobslist.filter((item) => {
-      return item.title.indexOf(SearchKey) !== -1 ? item : '';
-    });
-    updateJobData(filterData);
+  handleSearchQuery = (value) => {
+    const item = {
+      key: 'query',
+      filterText: value,
+    };
+    this.props.fetchQueryJobs(item);
   };
 
-  handleSearchText = (e) => {
-    this.setState({ searchTerm: e.target.value });
+  handleFilterSearch = (value) => {
+    this.props.fetchQueryJobs(value);
   };
 
   render() {
+    const { jobslist, updateJobList } = this.props;
+    const jobsData = updateJobList || jobslist;
+
     return (
       <div className='landing container p-4'>
         <Row gutter={16}>
           <Col className='gutter-row search-box-container' span={24}>
-            <SearchBox handleSearch={this.filterJobData} />
+            <SearchBox handleSearch={this.handleSearchQuery} />
           </Col>
         </Row>
 
         <Row gutter={16}>
           <Col className='gutter-row' span={6}>
-            <Filters />
+            <Filters handleFilter={this.handleFilterSearch} />
           </Col>
           <Col className='gutter-row' span={12}>
-            <SearchResult jobresult={this.props.jobslist} />
+            <SearchResult jobresult={jobsData} />
           </Col>
           <Col className='gutter-row' span={6}>
             <Sidebar />
@@ -53,7 +56,8 @@ class Landing extends Component {
 const mapStateToProps = (state) => {
   return {
     jobslist: state.jobs,
+    updateJobList: state.filterList,
   };
 };
 
-export default connect(mapStateToProps, { fetchJobs })(Landing);
+export default connect(mapStateToProps, { fetchJobs, fetchQueryJobs })(Landing);
