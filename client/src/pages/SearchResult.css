@@ -1,0 +1,33 @@
+.layout .layout-background {
+    background: #fff;
+}
+
+.list-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.site-badge {
+    padding: 0.25rem;
+    margin-left: 0.5rem;
+}
+
+.tag-badge {
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    color: #333;
+    border-radius: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.tag-txt {
+    padding: 0.5rem 0;
+}
+
+.location-txt {
+    margin-left: 0.75rem;
+}

@@ -1,84 +1,102 @@
-// import React, { useEffect, useState, Component } from 'react';
-// import { isEmpty } from 'ramda';
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import { fetchJobs, updateJobs } from '../../actions/jobsSearch';
+import React from 'react';
+import { Card, Col, Row, Select, Badge, Tag } from 'antd';
+import './SearchResult.css';
 
-// import { getJobs } from './Data/fetchSearchData';
-// import jobs from './../../data/jobResult.json';
-// import Filters from './../../components/Filters';
-// import './jobsearch.css';
+const { Option } = Select;
 
-// class SearchResult extends Component {
-//   constructor() {
-//     super();
-//     state = {
-//       searchTerm: '',
-//       jobData: '',
-//     };
-//   }
-//   componentDidMount() {
-//     const { fetchAllJobs } = this.props;
-//     fetchAllJobs(result);
-//   }
+const SearchResult = (props) => {
+  if (!props.jobresult) {
+    return <div className='article-preview'>Loading...</div>;
+  }
 
-//   filterJobData = (SearchKey) => {
-//     const { jobsResult, updateJobData } = this.props;
-//     const filterData = jobsResult.filter((item) => {
-//       return item.title.indexOf(SearchKey) !== -1 ? item : '';
-//     });
+  if (props.jobresult.length === 0) {
+    return <div className='article-preview'>No Jobs are here... yet.</div>;
+  }
 
-//     updateJobData(filterData);
-//   };
-//   handleSearchText = (e) => {
-//     this.setState({ searchTerm: e.target.value });
-//   };
+  const handleInlineCalulation = (string) => {
+    return new Function('return (' + string / 100 + ')')();
+  };
 
-//   render() {
-//     const { jobsResult, filteredJobsData } = this.props;
-//     const jobsData = isEmpty(filteredJobsData) ? jobsResult : filteredJobsData;
-//     return (
-//       <div>
-//         <Filters />
-//         {jobsData.map((item, idx) => {
-//           return (
-//             <div key={idx}>
-//               <div className={'content'}>
-//                 <div>
-//                   <span>{item.title} </span>
-//                   <span>{item.salarymax} </span>
-//                 </div>
-//                 <div>
-//                   <span>{item.desciption} </span>
-//                 </div>
-//               </div>
-//             </div>
-//           );
-//         })}{' '}
-//         Job Search
-//       </div>
-//     );
-//   }
-// }
+  return (
+    <>
+      <Card bordered={false}>
+        <Row style={{ alignItems: 'center' }}>
+          <Col span={8}>
+            <strong>RESULT ({props.jobresult.length})</strong>
+          </Col>
+          <Col span={10} offset={6}>
+            Sort By:
+            <Select
+              style={{ width: 150, paddingLeft: 5 }}
+              placeholder='Relevance'
+            >
+              <Option value='ascending'>Ascending Order</Option>
+              <Option value='descending'>Descending Order</Option>
+              <Option value='latest'>Latest</Option>
+              <Option value='oldest'>Oldest</Option>
+            </Select>
+          </Col>
+        </Row>
+        {props.jobresult.map((item) => {
+          return (
+            <div key={item.id} className='list-item'>
+              <Row>
+                <Col span={16}>
+                  <strong>{item.title}</strong>
+                  {item.jobType === 'Full Time' ? (
+                    <Badge
+                      className='site-badge'
+                      count={item.jobType}
+                      style={{ backgroundColor: '#4bd3ff' }}
+                    />
+                  ) : item.jobType === 'Part Time' ? (
+                    <Badge
+                      className='site-badge'
+                      count={item.jobType}
+                      style={{ backgroundColor: '#ffc22b' }}
+                    />
+                  ) : (
+                    <Badge
+                      className='site-badge'
+                      count={item.jobType}
+                      style={{ backgroundColor: '#52c41a' }}
+                    />
+                  )}
+                </Col>
+                <Col span={4} offset={4} style={{ textAlign: 'right' }}>
+                  <strong>
+                    {'$'}
+                    {handleInlineCalulation(item.salarymax)}
+                    {' /hr'}
+                  </strong>
+                </Col>
+              </Row>
+              <div>
+                <Row>
+                  <Col span={16}>
+                    {<a href='org.html'>Organizaton Name</a>}{' '}
+                    <span className='location-txt'>{item.location}</span>
+                    <br /> Reply Rate: <strong>xx%</strong>
+                    <br /> Lorem Ipsum has been the industry's standard dummy
+                    text ever since the 1500s.
+                    <div className='tag-txt'>
+                      {item.requiredSkills.map((skills) => {
+                        return (
+                          <Tag color='default' className='tag-badge'>
+                            {skills}
+                          </Tag>
+                        );
+                      })}
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            </div>
+          );
+        })}
+      </Card>
+    </>
+  );
+};
 
-// const mapStateToProps = (state) => {
-//   console.log('State => ', state);
-//   return {
-//     jobsResult: state.result,
-//     filteredJobsData: state.filteredJobs,
-//   };
-// };
-// const mapDispatchToProps = (dispatch) => {
-//   // return bindActionCreators(this.fetchJobs, dispatch);
-
-//   return {
-//     fetchAllJobs: (payload) => {
-//       dispatch(fetchJobs(payload));
-//     },
-//     updateJobData: (payload) => {
-//       dispatch(updateJobs(payload));
-//     },
-//   };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(SearchResult);
+export default SearchResult;

@@ -7,7 +7,7 @@
     "salarymax": "3000",
     "jobType": "Full Time",
     "location": "California",
-    "requiredSkills": "react, npm, webpack"
+    "requiredSkills": ["react", "npm", "webpack"]
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "salarymax": "1700",
     "jobType": "Full Time",
     "location": "California",
-    "requiredSkills": "html,js.css"
+    "requiredSkills": ["html", "js", "css"]
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "salarymax": "3000",
     "jobType": "Part Time",
     "location": "Dallas",
-    "requiredSkills": "react, npm, webpack"
+    "requiredSkills": ["react", "npm", "webpack"]
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "salarymax": "1500",
     "jobType": "Full Time",
     "location": "Chennai",
-    "requiredSkills": "react, npm, webpack"
+    "requiredSkills": ["react", "npm", "webpack"]
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "salarymax": "1700",
     "jobType": "Full Time",
     "location": "Chennai",
-    "requiredSkills": "java, spring, kafka"
+    "requiredSkills": ["java", "spring", "kafka"]
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "salarymax": "5500",
     "jobType": "Full Time",
     "location": "California",
-    "requiredSkills": "java, spring, kafka"
+    "requiredSkills": ["java", "spring", "kafka"]
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "salarymax": "8000",
     "jobType": "Full Time",
     "location": "California",
-    "requiredSkills": "react, nginx, java, spring, kafka"
+    "requiredSkills": ["react", "nginx", "java", "spring", "kafka"]
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "salarymax": "8000",
     "jobType": "Full Time",
     "location": "California",
-    "requiredSkills": "scala, java, spring, kafka, hadoop, spark"
+    "requiredSkills": ["scala", "java", "spring", "kafka", "hadoop", "spark"]
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "salarymax": "8000",
     "jobType": "Full Time",
     "location": "California",
-    "requiredSkills": "oracle, mysql"
+    "requiredSkills": ["oracle", "mysql"]
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "salarymax": "4000",
     "jobType": "Full Time",
     "location": "California",
-    "requiredSkills": "program management"
+    "requiredSkills": ["program management"]
   },
   {
     "id": 11,
@@ -107,7 +107,7 @@
     "salarymax": "1500",
     "jobType": "Full Time",
     "location": "Bangalore",
-    "requiredSkills": "react, npm, webpack"
+    "requiredSkills": ["react", "npm", "webpack"]
   },
   {
     "id": 12,
@@ -117,7 +117,7 @@
     "salarymax": "1700",
     "jobType": "Full Time",
     "location": "New York",
-    "requiredSkills": "html,js.css"
+    "requiredSkills": ["html", "js", "css"]
   },
   {
     "id": 13,
@@ -127,7 +127,7 @@
     "salarymax": "3000",
     "jobType": "Part Time",
     "location": "Bangalore",
-    "requiredSkills": "react, npm, webpack"
+    "requiredSkills": ["react", "npm", "webpack"]
   },
   {
     "id": 14,
@@ -137,7 +137,7 @@
     "salarymax": "1500",
     "jobType": "Full Time",
     "location": "Bangalore",
-    "requiredSkills": "react, npm, webpack"
+    "requiredSkills": ["react", "npm", "webpack"]
   },
   {
     "id": 15,
@@ -147,7 +147,7 @@
     "salarymax": "1700",
     "jobType": "Full Time",
     "location": "Hyderabad",
-    "requiredSkills": "java, spring, kafka"
+    "requiredSkills": ["java", "spring", "kafka"]
   },
   {
     "id": 16,
@@ -157,7 +157,7 @@
     "salarymax": "5500",
     "jobType": "Full Time",
     "location": "Chennai",
-    "requiredSkills": "java, spring, kafka"
+    "requiredSkills": ["java", "spring", "kafka"]
   },
   {
     "id": 17,
@@ -167,7 +167,7 @@
     "salarymax": "8000",
     "jobType": "Full Time",
     "location": "Texas",
-    "requiredSkills": "react, nginx, java, spring, kafka"
+    "requiredSkills": ["react", "nginx", "java", "spring", "kafka"]
   },
   {
     "id": 18,
@@ -177,7 +177,7 @@
     "salarymax": "8000",
     "jobType": "Full Time",
     "location": "Philliphines",
-    "requiredSkills": "scala, java, spring, kafka, hadoop, spark"
+    "requiredSkills": ["scala", "java", "spring", "kafka", "hadoop", "spark"]
   },
   {
     "id": 19,
@@ -187,7 +187,7 @@
     "salarymax": "8000",
     "jobType": "Full Time",
     "location": "Singapore",
-    "requiredSkills": "oracle, mysql"
+    "requiredSkills": ["oracle", "mysql"]
   },
   {
     "id": 20,
@@ -197,6 +197,6 @@
     "salarymax": "4000",
     "jobType": "Full Time",
     "location": "Singapore",
-    "requiredSkills": "program management"
+    "requiredSkills": ["program management"]
   }
 ]

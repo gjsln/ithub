@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import { Card, Col, Row, Button, Space, List } from 'antd';
+import logo from '../../assets/images/logo.png';
 import './Sidebar.css';
 
 const data1 = [
@@ -20,6 +21,7 @@ class Sidebar extends Component {
           <Col className='col-width'>
             <Card bordered={false}>
               <Space direction='vertical' size={10}>
+                <img src={logo} alt='Logo' />
                 <h5>Track time on Hubstaff</h5>
                 Pay only for the hours wored
                 <Button type='primary' block>

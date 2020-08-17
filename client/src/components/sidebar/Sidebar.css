@@ -2,7 +2,8 @@
   border-bottom: 1px solid #ccc;
 }
 .sidebar-content .ant-card-body {
-  padding: 0.75rem;
+  padding: 1rem;
+  text-align: center;
 }
 
 .col-width {
