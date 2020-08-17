@@ -1,12 +1,12 @@
 # ithub
 
-run npm install based folder and inside client folder
+# run npm install in base folder and inside client folder
 
-Run Server
+# Run Server
 npm run server
 
-Run Dev Environment
+# Run Dev Environment
 npm run dev
 
-Run Client
+# Run Client
 npm run client
